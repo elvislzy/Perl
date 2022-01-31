@@ -1,0 +1,12 @@
+Name	            Instance_number	        Area-per-instance	    Power-per-instance
+ALU-Adder           32                     	945                    	0.0333
+ALU-Multiplier	    16                     	6347                   	0.2235
+RAM-Small           8                      	2239                   	0.0542
+RAM-Large           2                      	10943                  	1.9312
+Control             1                      	8345                   	0.2344
+Data-pipe           1                      	10123                  	1.3423
+Processor           1                      	24231                  	1.0212
+total area: 214289
+total power: 11.5355
+ram area: 39798(18.5721152275665%)
+alu power: 4.6416(40.2375276320922%)
