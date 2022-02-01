@@ -5,31 +5,49 @@ use POSIX;
 my $cur_time = strftime("%m/%d/%Y",localtime());
 my $file_name;
 my $tab = " "x4;
+my $comment = "#";
 
 if(@ARGV == 1) {
     $file_name = $ARGV[0];
+    if($file_name =~ /\.v$/i) {
+        $comment = "//";
+    }
 }
 else {
     &help_message();
 }
 
+my $name = $file_name;
+$name =~ s/^(.*)\.\w+$/${1}/;
+
+print "$name";
+
 open(LOG, ">", $file_name) or die "Can't open $file_name for writing!\n";
 my $str = "";
-$str .= "#!user/bin/perl -w\n";
-$str .= "use strict;\n";
-$str .= "# -----------------------------------------------------------------\n";
-$str .= "# Filename: $file_name                                             \n";
-$str .= "# \n";
-$str .= "# Company: \n";
-$str .= "# Description:                                                     \n";
-$str .= "# \n";
-$str .= "# \n";
-$str .= "#                                                                  \n";
-$str .= "# Author: Elvis.Lu<lzyelvis\@gmail.com>                            \n";
-$str .= "# Create Date: $cur_time                                           \n";
-$str .= "# Comments:                                                        \n";
-$str .= "# \n";
-$str .= "# -----------------------------------------------------------------\n";
+
+if ($file_name =~ /\.pl$/i) {
+    $str .= "#!user/bin/perl -w\n";
+    $str .= "use strict;\n";
+}
+
+$str .= "${comment} -----------------------------------------------------------------\n";
+$str .= "${comment} Filename: $file_name                                             \n";
+$str .= "${comment} \n";
+$str .= "${comment} Company: \n";
+$str .= "${comment} Description:                                                     \n";
+$str .= "${comment} \n";
+$str .= "${comment} \n";
+$str .= "${comment}                                                                  \n";
+$str .= "${comment} Author: Elvis.Lu<lzyelvis\@gmail.com>                            \n";
+$str .= "${comment} Create Date: $cur_time                                           \n";
+$str .= "${comment} Comments:                                                        \n";
+$str .= "${comment} \n";
+$str .= "${comment} -----------------------------------------------------------------\n";
+$str .= "\n\n";
+
+if($file_name =~ /\.v$/i) {
+    $str .= "module $name ();";
+}
 
 print LOG $str;
 close(LOG);
