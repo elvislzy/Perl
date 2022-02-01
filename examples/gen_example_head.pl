@@ -20,8 +20,6 @@ else {
 my $name = $file_name;
 $name =~ s/^(.*)\.\w+$/${1}/;
 
-print "$name";
-
 open(LOG, ">", $file_name) or die "Can't open $file_name for writing!\n";
 my $str = "";
 
@@ -52,7 +50,7 @@ if($file_name =~ /\.v$/i) {
 print LOG $str;
 close(LOG);
 
-print "\n generated\n\n";
+print "\n generated $file_name\n\n";
 
 sub help_message {
     print "\n The $0 script used to generate file head\n\n";
