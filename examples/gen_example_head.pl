@@ -44,7 +44,9 @@ $str .= "${comment} ------------------------------------------------------------
 $str .= "\n\n";
 
 if($file_name =~ /\.v$/i) {
-    $str .= "module $name ();";
+    $str .= "module $name(\n\n\n\n);";
+    $str .= "\n\n\n\n\n\n\n\n\n\n\n\n";
+    $str .= "endmodule";
 }
 
 print LOG $str;
