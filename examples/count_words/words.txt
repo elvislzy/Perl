@@ -1,0 +1,5 @@
+"ALL happy families resemble one another; every unhappy family is unhappy in its own way.
+All was confusion in the house of Oblonskys. The wife had dicscovered that her husband was having an intrigue with a French governess who had been
+in their employ, and the declared that the could not live in the same house with him. This condition of things had lasted now three days, and was causing
+deep discomfort, not only to..."
+happy? happy: [happy] {happy} "happy" 'happy'
